@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');
@@ -91,6 +91,10 @@ module.exports = function (proxy, allowedHost) {
       ignored: ignoredFiles(paths.appSrc),
     },
     https: getHttpsConfig(),
+    // Added by [icestark]: to avoid cors error
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
     host,
     overlay: false,
     historyApiFallback: {
