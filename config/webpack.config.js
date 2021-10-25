@@ -168,9 +168,9 @@ module.exports = function (webpackEnv) {
     // This means they will be the "root" imports that are included in JS bundle.
     entry: paths.appIndexJs,
     output: {
-      // [添加] - icestark 设置 library
+      // [添加] - [icestark]: 设置 library
       library: "xxxx",
-      // [添加] - icestark 输出为 umd 方式
+      // [添加] - [icestark]: 输出为 umd 方式
       libraryTarget: 'umd',
       // The build folder.
       path: isEnvProduction ? paths.appBuild : undefined,
@@ -183,7 +183,7 @@ module.exports = function (webpackEnv) {
       futureEmitAssets: true,
       // There are also additional JS chunk files if you use code splitting.
 
-      // [移除] - icestark 移除 chunk 模式，若支持 chunk，需要将 chunk 加入到主应用的 url 中
+      // [移除] - [icestark]: 移除 chunk 模式，若支持 chunk，需要将 chunk 加入到主应用的 url 中
       // chunkFilename: isEnvProduction
       //   ? 'static/js/[name].[contenthash:8].chunk.js'
       //   : isEnvDevelopment && 'static/js/[name].chunk.js',
